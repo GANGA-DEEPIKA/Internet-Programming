@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Beauty Salon Appointment Booking</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff1f2;
+}
+
+header{
+    background:linear-gradient(135deg,#be185d,#f472b6);
+    color:white;
+    text-align:center;
+    padding:75px 20px;
+}
+
+header h1{
+    font-size:48px;
+    margin-bottom:12px;
+}
+
+header p{
+    font-size:20px;
+}
+
+.services{
+    padding:50px 10%;
+    text-align:center;
+}
+
+.services h2,
+.appointment h2{
+    color:#be185d;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    text-align:left;
+}
+
+.service-card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+}
+
+.service-info{
+    padding:18px;
+}
+
+.service-info h3{
+    color:#9d174d;
+    margin-bottom:8px;
+}
+
+.appointment{
+    width:80%;
+    margin:40px auto;
+    text-align:center;
+}
+
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    text-align:left;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#9d174d;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+textarea{
+    height:100px;
+}
+
+button{
+    margin-top:20px;
+    background:#db2777;
+    color:white;
+    border:none;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#9d174d;
+}
+
+#result{
+    margin-top:20px;
+}
+
+footer{
+    background:#831843;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:900px){
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .appointment{
+        width:90%;
+    }
+
+    header h1{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Book Your Beauty Salon Appointment Online</h1>
+    <p>Glow, Relax and Reserve Your Salon Service Easily</p>
+</header>
+
+<section class="services">
+    <h2>Our Beauty Services</h2>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e">
+            <div class="service-info">
+                <h3>Hair Styling</h3>
+                <p>Haircut, styling and smooth finishing</p>
+                <p>Starting from ₹799</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035">
+            <div class="service-info">
+                <h3>Facial Treatment</h3>
+                <p>Skin glow and refreshing facial care</p>
+                <p>Starting from ₹999</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371">
+            <div class="service-info">
+                <h3>Manicure & Pedicure</h3>
+                <p>Nail care, polish and hand-foot spa</p>
+                <p>Starting from ₹699</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="appointment">
+    <h2>Book an Appointment</h2>
+
+    <div class="form-box">
+
+        <label>Customer Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label>Phone Number</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+
+        <label>Service Category</label>
+        <select id="category">
+            <option>Hair Care</option>
+            <option>Skin Care</option>
+            <option>Nail Care</option>
+            <option>Makeup</option>
+            <option>Spa & Massage</option>
+        </select>
+
+        <label>Service</label>
+        <select id="service">
+            <option>Hair Styling</option>
+            <option>Facial Treatment</option>
+            <option>Manicure & Pedicure</option>
+            <option>Bridal Makeup</option>
+            <option>Hair Spa</option>
+        </select>
+
+        <label>Appointment Date</label>
+        <input type="date" id="date">
+
+        <label>Appointment Time</label>
+        <input type="time" id="time">
+
+        <label>Special Request / Notes</label>
+        <textarea id="notes" placeholder="Enter any special request"></textarea>
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+
+        <div id="result"></div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 GlowBeauty Salon. All Rights Reserved.</p>
+</footer>
+
+<script>
+function bookAppointment(){
+
+    let name = document.getElementById("name").value;
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+
+    if(name === "" || date === "" || time === ""){
+        alert("Please fill Customer Name, Date and Time");
+        return;
+    }
+
+    document.getElementById("result").innerHTML = `
+        <div style="
+            background:#fce7f3;
+            color:#9d174d;
+            padding:20px;
+            border-left:8px solid #db2777;
+            border-radius:10px;
+            font-size:18px;
+            font-weight:bold;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        ">
+            ✅ Salon Appointment Confirmed!<br><br>
+            👤 Customer: ${name}<br>
+            💄 Service: ${service}<br>
+            📅 Date: ${date}<br>
+            ⏰ Time: ${time}<br><br>
+            ✨ Thank you for choosing GlowBeauty Salon.
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
