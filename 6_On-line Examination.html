@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination</title>
+</head>
+<body>
+
+    <h2>On-line Examination using Servlets</h2>
+
+    <form action="ExamServlet" method="post">
+
+        <label>Student Name:</label>
+        <input type="text" name="studentName" required><br><br>
+
+        <label>Register Number:</label>
+        <input type="text" name="regNo" required><br><br>
+
+        <h3>Answer the Questions</h3>
+
+        <p>1. Which language is used to create Servlets?</p>
+        <input type="radio" name="q1" value="Java" required> Java<br>
+        <input type="radio" name="q1" value="Python"> Python<br>
+        <input type="radio" name="q1" value="C"> C<br>
+
+        <p>2. Which method is used to handle POST request?</p>
+        <input type="radio" name="q2" value="doGet" required> doGet()<br>
+        <input type="radio" name="q2" value="doPost"> doPost()<br>
+        <input type="radio" name="q2" value="main"> main()<br>
+
+        <p>3. Servlet runs on which component?</p>
+        <input type="radio" name="q3" value="Browser" required> Browser<br>
+        <input type="radio" name="q3" value="Web Container"> Web Container<br>
+        <input type="radio" name="q3" value="Compiler"> Compiler<br>
+
+        <p>4. Which object stores client request data?</p>
+        <input type="radio" name="q4" value="HttpServletRequest" required> HttpServletRequest<br>
+        <input type="radio" name="q4" value="HttpServletResponse"> HttpServletResponse<br>
+        <input type="radio" name="q4" value="Session"> Session<br>
+
+        <p>5. Which method is called only once in servlet life cycle?</p>
+        <input type="radio" name="q5" value="init" required> init()<br>
+        <input type="radio" name="q5" value="service"> service()<br>
+        <input type="radio" name="q5" value="destroy"> destroy()<br>
+
+        <br>
+        <input type="submit" value="Submit Exam">
+        <input type="reset" value="Clear">
+
+    </form>
+
+</body>
+</html>
