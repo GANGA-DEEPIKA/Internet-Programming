@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Cake Ordering System</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#fff0f5;
+}
+header{
+    background:#c2185b;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+nav{
+    background:#e91e63;
+    text-align:center;
+    padding:15px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:20px;
+    font-weight:bold;
+}
+.container{
+    text-align:center;
+    padding:30px;
+}
+.card{
+    display:inline-block;
+    background:white;
+    width:250px;
+    margin:15px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 0 10px gray;
+}
+.card h3{
+    color:#c2185b;
+}
+input, select, textarea, button{
+    width:280px;
+    padding:10px;
+    margin:8px;
+}
+button{
+    background:#c2185b;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+footer{
+    background:#c2185b;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Online Cake Ordering System</h1>
+    <p>Order Fresh and Delicious Cakes Online</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Cakes</a>
+    <a href="#">Order</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+    <h2>Popular Cakes</h2>
+
+    <div class="card">
+        <h3>Chocolate Cake</h3>
+        <p>Price: ₹600</p>
+    </div>
+
+    <div class="card">
+        <h3>Black Forest Cake</h3>
+        <p>Price: ₹750</p>
+    </div>
+
+    <div class="card">
+        <h3>Strawberry Cake</h3>
+        <p>Price: ₹850</p>
+    </div>
+
+    <h2>Place Your Cake Order</h2>
+
+    <form>
+        <input type="text" placeholder="Customer Name" required><br>
+        <input type="tel" placeholder="Mobile Number" required><br>
+
+        <select required>
+            <option value="">Select Cake</option>
+            <option>Chocolate Cake</option>
+            <option>Black Forest Cake</option>
+            <option>Strawberry Cake</option>
+            <option>Vanilla Cake</option>
+        </select><br>
+
+        <select required>
+            <option value="">Select Weight</option>
+            <option>500g</option>
+            <option>1kg</option>
+            <option>2kg</option>
+            <option>3kg</option>
+        </select><br>
+
+        <input type="date" required><br>
+
+        <textarea placeholder="Delivery Address" rows="4" required></textarea><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2026 Online Cake Ordering System</p>
+</footer>
+
+</body>
+</html>
